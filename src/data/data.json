@@ -1,0 +1,180 @@
+[
+    {
+        "id": "0001",
+        "type": "donut",
+        "name": "Cake",
+        "ppu": 0.55,
+        "batters": {
+            "batter": [
+                { "id": "1001", "type": "Regular" },
+                { "id": "1002", "type": "Chocolate" },
+                { "id": "1003", "type": "Blueberry" },
+                { "id": "1004", "type": "Devil's Food" }
+            ]
+        },
+        "topping": [
+            { "type": "None" },
+            { "type": "Glazed" },
+            { "type": "Sugar" },
+            { "type": "Powdered Sugar" },
+            { "type": "Chocolate with Sprinkles" },
+            { "type": "Chocolate" },
+            { "type": "Maple" }
+        ]
+    },
+    {
+        "id": "0002",
+        "type": "donut",
+        "name": "Raised",
+        "ppu": 0.55,
+        "batters": {
+            "batter": [
+                { "id": "1001", "type": "Regular" }
+            ]
+        },
+        "topping": [
+            { "type": "None" },
+            { "type": "Glazed" },
+            { "type": "Sugar" },
+            { "type": "Chocolate" },
+            { "type": "Maple" }
+        ]
+    },
+    {
+        "id": "0003",
+        "type": "donut",
+        "name": "Old Fashioned",
+        "ppu": 0.55,
+        "batters": {
+            "batter": [
+                { "id": "1001", "type": "Regular" },
+                { "id": "1002", "type": "Chocolate" }
+            ]
+        },
+        "topping": [
+            { "type": "None" },
+            { "type": "Glazed" },
+            { "type": "Chocolate" },
+            { "type": "Maple" }
+        ]
+    },
+    {
+        "id": "0004",
+        "type": "donut",
+        "name": "Glazed",
+        "ppu": 0.60,
+        "batters": {
+            "batter": [
+                { "id": "1001", "type": "Regular" }
+            ]
+        },
+        "topping": [
+            { "type": "Glazed" },
+            { "type": "Maple" }
+        ]
+    },
+    {
+        "id": "0005",
+        "type": "donut",
+        "name": "Strawberry Filled",
+        "ppu": 0.65,
+        "batters": {
+            "batter": [
+                { "id": "1001", "type": "Regular" }
+            ]
+        },
+        "topping": [
+            { "type": "Glazed" },
+            { "type": "Sugar" }
+        ]
+    },
+    {
+        "id": "0006",
+        "type": "donut",
+        "name": "Boston Cream",
+        "ppu": 0.70,
+        "batters": {
+            "batter": [
+                { "id": "1001", "type": "Regular" }
+            ]
+        },
+        "topping": [
+            { "type": "Chocolate" },
+            { "type": "Chocolate with Sprinkles" }
+        ]
+    },
+    {
+        "id": "0007",
+        "type": "donut",
+        "name": "Cinnamon Twist",
+        "ppu": 0.75,
+        "batters": {
+            "batter": [
+                { "id": "1001", "type": "Regular" }
+            ]
+        },
+        "topping": [
+            { "type": "Sugar" },
+            { "type": "Cinnamon" }
+        ]
+    },
+    {
+        "id": "0008",
+        "type": "donut",
+        "name": "Apple Fritter",
+        "ppu": 0.85,
+        "batters": {
+            "batter": [
+                { "id": "1001", "type": "Regular" }
+            ]
+        },
+        "topping": [
+            { "type": "Apple Glaze" },
+            { "type": "Sugar" }
+        ]
+    },
+    {
+        "id": "0009",
+        "type": "donut",
+        "name": "Jelly Filled",
+        "ppu": 0.65,
+        "batters": {
+            "batter": [
+                { "id": "1001", "type": "Regular" }
+            ]
+        },
+        "topping": [
+            { "type": "Glazed" },
+            { "type": "Powdered Sugar" }
+        ]
+    },
+    {
+        "id": "0010",
+        "type": "donut",
+        "name": "Maple Bar",
+        "ppu": 0.70,
+        "batters": {
+            "batter": [
+                { "id": "1001", "type": "Regular" }
+            ]
+        },
+        "topping": [
+            { "type": "Maple" }
+        ]
+    },
+    {
+        "id": 11,
+        "type": "donut",
+        "name": "Vanilla Frosted",
+        "ppu": 0.76,
+        "batters": {
+            "batter": [
+                { "id": "1001", "type": "Regular" }
+            ]
+        },
+        "topping": [
+            { "type": "Glazed" },
+            { "type": "Vanilla" }
+        ]
+    }
+]

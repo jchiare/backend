@@ -1,0 +1,10 @@
+.vscode
+.idea
+.history/
+dist/
+.env
+coverage/
+output/
+.history/
+.history/
+.DS_Storexs

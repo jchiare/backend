@@ -1,0 +1,12 @@
+site_name: "challenge-repo"
+site_description: "This is repo contains the code for the challenge"
+
+nav:
+  - Introduction: index.md
+  - Playbook: playbook.md
+
+repo_url: "https://github.com/zenjob/challenge-repo"
+edit_uri: edit/main/docs/
+
+plugins:
+  - techdocs-core
