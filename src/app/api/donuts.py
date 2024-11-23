@@ -8,11 +8,34 @@ from app.utils.decorator import should_modify
 
 _file_path = f"{os.path.dirname(__file__)}/../../data/data.json"
 
+
 @should_modify
-def get_all_donuts() -> DonutCollection|None:
-    raise NotImplementedError("This function is not implemented yet")
+def get_all_donuts() -> DonutCollection | None:
+    try:
+        with open(_file_path, "r") as file:
+            data = json.load(file)
+
+        return DonutCollection(root=[Donut(**donut) for donut in data])
+    except Exception as e:
+        logging.error(f"Error loading donuts: {str(e)}")
+        return None
+
+
+DONUT = "donut"
 
 
 @should_modify
-def find_most_common_toppings(donuts: List[Donut], top_n) -> list[str]:
-    raise NotImplementedError("This function is not implemented yet")
+def find_most_common_toppings(donuts: List[Donut], top_n: int) -> List[str]:
+
+    # I find this easier to read then a list comprehension :)
+    # Happy to change to the team standard though
+    all_toppings = []
+    for donut in donuts:
+        if donut.type == DONUT:
+            for topping in donut.topping:
+                all_toppings.append(topping.type)
+
+    topping_counts = Counter(all_toppings)
+    most_common = topping_counts.most_common(top_n)
+
+    return [topping for topping, _ in most_common]
