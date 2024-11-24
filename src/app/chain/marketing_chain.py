@@ -18,27 +18,25 @@ class Output(BaseModel):
 class Answer(BaseModel):
     """Response from the LLM model"""
 
-    donut_name: str = Field(description="fancy donut name")
+    donut_name: str = Field(description="The name of a fancy donut")
 
 
-# Please use a free OpenAI API key while working on the challenge and remove the key before sending us the challenge
-OPENAI_API_KEY = ""
-
-llm = ChatOpenAI(
-    model="gpt-4o", temperature=0, request_timeout=120, openai_api_key=OPENAI_API_KEY
-).bind_tools([Answer])
+llm = ChatOpenAI(model="gpt-4o", temperature=0.5, request_timeout=120).bind_tools(
+    [Answer], strict=True
+)
 
 prompt = ChatPromptTemplate.from_messages(
     [
         (
             "system",
-            "You work for a creative brand agency that speciliazes in creating names of baked goods.",
+            "You work for a creative brand agency that speciliazes in creating names of baked goods."
+            "The user will provide a list of existing donut names that are all lowercased."
+            "Your goal is to generate 5 new fancy donuts names where at least one of the new fancy donut names will contain a substring, delimited by whitespaces, in the existing list"
+            "For example, if the existing donut names are ['Raised', 'Old Fashioned'], then you can return ['Berlin Bruiser', 'New Age Classics', 'Sugar Addiction', 'VW for Villy Wonka', 'Old Fashioned Smokey']",
         ),
         (
             "user",
-            "You are marketing director of a donut shop and you need to come up "
-            "with a fancy name for our new donut."
-            "Here is our list of donut names for inspiration: {donuts}.",
+            "{donuts}",
         ),
     ]
 )
@@ -53,17 +51,14 @@ chain = (
 )
 
 
-def create_new_donut_name(existing_donuts: list[str], n=5) -> list[str]:
-    donut_names = []
-    for _ in range(n):
-        answer = chain.invoke(
-            {
-                "donuts": existing_donuts,
-            }
-        )
-        donut_names.append(answer.donut_name)
+def create_new_donut_names(existing_donuts: list[str]) -> list[str]:
+    result = chain.invoke(
+        {
+            "donuts": existing_donuts,
+        }
+    )
 
-    return donut_names
+    return [donut.donut_name for donut in result]
 
 
 donut_naming_agent = (
