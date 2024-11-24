@@ -1,5 +1,4 @@
 import logging
-from openai import APIError
 from langchain.agents import AgentExecutor
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.pydantic_v1 import BaseModel, Field
@@ -21,9 +20,9 @@ class Answer(BaseModel):
     donut_name: str = Field(description="The name of a fancy donut")
 
 
-llm = ChatOpenAI(model="gpt-4o", temperature=0.5, request_timeout=120).bind_tools(
-    [Answer], strict=True
-)
+llm = ChatOpenAI(
+    model="gpt-4o", temperature=0.5, request_timeout=120, max_retries=3
+).bind_tools([Answer], strict=True)
 
 prompt = ChatPromptTemplate.from_messages(
     [
